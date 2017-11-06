@@ -2,7 +2,7 @@ const apiPath = 'http://localhost:8080/api';
 
 const fetchOptions = {
     headers: {
-        'Content-Type': 'application/json',
+        'Accepts': 'application/json',
         Authorization: `Basic ${btoa('admin:district')}`
     }
 };
