@@ -1,0 +1,17 @@
+section {
+    margin-bottom: 10px;
+}
+
+select {
+    padding: 5px;
+    font-size: 18px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+}
