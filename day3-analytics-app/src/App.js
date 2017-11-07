@@ -4,19 +4,10 @@ import PropTypes from 'prop-types';
 import { getData } from './actions';
 import './App.css';
 
-let selectedValue = null;
-
-const Selector = ({ onClick }) => {
-    const clickHandler = (e) => {
-        if (e.target.value !== selectedValue) {
-            onClick(e.target.value);
-            selectedValue = e.target.value;
-        }
-    };
-
+const Selector = ({ onChange }) => {
     return (
         <section>
-            <select onClick={clickHandler} defaultValue="">
+            <select onChange={(e) => onChange(e.target.value)} defaultValue="">
                 <option hidden value="">Select period</option>
                 <option value="2017">Fixed: 2017</option>
                 <option value="201701">Fixed: January 2017</option>
@@ -59,9 +50,9 @@ const ValueTable = ({ data, isLoading }) => {
     );
 };
 
-const App = ({ data, isLoading, onClick }) => (
+const App = ({ data, isLoading, onChange }) => (
     <div>
-        <Selector onClick={ onClick } />
+        <Selector onChange={ onChange } />
         <ValueTable data={ data } isLoading={ isLoading } />
     </div>
 );
@@ -76,7 +67,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-    onClick: value => value && dispatch(getData(value))
+    onChange: value => value && dispatch(getData(value))
 });
 
 const AppContainer = connect(mapStateToProps, mapDispatchToProps)(App);
