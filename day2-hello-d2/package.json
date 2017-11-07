@@ -1,9 +1,10 @@
 {
-  "name": "day1-hello-dhis",
-  "description": "Minimal DHIS webapp",
+  "name": "d2-demo",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "d2": "^28.3.0",
+    "d2-manifest": "^1.0.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-scripts": "1.0.17"
@@ -15,14 +16,20 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "homepage": ".",
   "manifest.webapp": {
-    "icons": {
-      "48": "icon.png"
-    },
+    "name": "D2 Demo",
+    "description": "Simple D2 demo for the DHIS 2 Dev Academy 2017",
     "developer": {
-      "name": "Some One"
+      "name": "Nicolay Ramm"
     },
-    "name": "Hello DHIS!"
-  }
+    "icons": {
+      "48": "favicon.ico"
+    },
+    "activities": {
+      "dhis": {
+        "href": "http://localhost:8080/dhis/api"
+      }
+    }
+  },
+  "homepage": "."
 }
