@@ -1,0 +1,20 @@
+{
+  "launch_path": "index.html",
+  "default_locale": "en",
+  "activities": {
+    "dhis": {
+      "href": "http://localhost:8080/dhis/api"
+    }
+  },
+  "appType": "APP",
+  "name": "D2 Demo",
+  "version": "0.1.0",
+  "description": "Simple D2 demo for the DHIS 2 Dev Academy 2017",
+  "developer": {
+    "name": "Nicolay Ramm"
+  },
+  "icons": {
+    "48": "favicon.ico"
+  },
+  "manifest_generated_at": "Tue Nov 07 2017 04:37:30 GMT+0300 (EAT)"
+}
