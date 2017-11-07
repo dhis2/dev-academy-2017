@@ -1,5 +1,6 @@
 {
   "name": "day1-hello-dhis",
+  "description": "Minimal DHIS webapp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,7 +11,18 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "postbuild": "d2-manifest package.json build/manifest.webapp",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "homepage": ".",
+  "manifest.webapp": {
+    "icons": {
+      "48": "icon.png"
+    },
+    "developer": {
+      "name": "Some One"
+    },
+    "name": "Hello DHIS!"
   }
 }
