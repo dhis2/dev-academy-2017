@@ -10,7 +10,7 @@ import { init } from 'd2/lib/d2';
 init({
     baseUrl: 'http://localhost:8080/api',
     schemas: [],
-    headers: { authentication: `Basic ${btoa('admin:district')}` }
+    headers: { Authorization: `Basic ${btoa('admin:district')}` }
 })
 .then((d2) => {
     ReactDOM.render(
