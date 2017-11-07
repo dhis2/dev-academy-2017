@@ -1,31 +1,36 @@
-const apiPath = 'http://localhost:8080/api';
-
-const fetchOptions = {
-    headers: {
-        'Accepts': 'application/json',
-        Authorization: `Basic ${btoa('admin:district')}`
-    }
-};
+import { getInstance as getD2 } from 'd2/lib/d2';
 
 export const fetchData = (periodId) => {
 
     // aggregate
 
-    const url = `${apiPath}/analytics.json?` + [
-        'dimension=dx:FbKK4ofIv5R',
-        `dimension=pe:${periodId}`,
-        //'dimension=ou:ImspTQPwCqd',
-        //'includeNumDen=true'
-    ].join('&');
+    return getD2()
+        .then((d2) => {
+            return d2.analytics.aggregate
+                .reset()
+                .addDimensions([
+                    'dx:FbKK4ofIv5R',
+                    `pe:${periodId}`,
+                ]).get();
+        });
 
     // events
+/*
+    return getD2()
+        .then((d2) => {
+            const d2AnalyticsEvents = d2.analytics.events
+                .reset()
+                .setProgram('eBAyeGv0exc')
+                .addDimensions([
+                    'qrur9Dvnyt5-Yf6UHoPkdS6',
+                    `pe:${periodId}`,
+                    'ou:ImspTQPwCqd',
+                ])
+                .addParameters({
+                    stage: 'Zj7UnCAulEk',
+                });
 
-    // const url = `${apiPath}/analytics/events/aggregate/eBAyeGv0exc.json?` + [
-    //     'dimension=qrur9Dvnyt5-Yf6UHoPkdS6',
-    //     `dimension=pe:${periodId}`,
-    //     'dimension=ou:ImspTQPwCqd',
-    //     'stage=Zj7UnCAulEk'
-    // ].join('&');
-
-    return fetch(url, fetchOptions).then(response => response.json());
+            return d2AnalyticsEvents.getAggregate();
+        });
+*/
 };
