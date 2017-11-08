@@ -9,9 +9,9 @@ can be added to this application.
 
 # SCRIPTS
 
-`npm install`       #--- installs the deps
-`npm start`         #--- serves the app at http://localhost:3000
-`npm run build`     #--- builds the app to `build/`
+- `npm install`        : installs the deps
+- `npm start`          : serves the app at http://localhost:3000
+- `npm run build`      : builds the app to `build/`
 
 # APP STRUCTURE
 
