@@ -3,9 +3,9 @@
 Check out the branch for `redux-todo` to see how redux
 can be added to this application.
 
-`git checkout redux-todo`
-`npm install`
-`npm start`
+- `git checkout redux-todo`
+- `npm install`
+- `npm start`
 
 # SCRIPTS
 
