@@ -13,6 +13,6 @@ utils
       }
     ]
   })
-  .then(rep => {
-    console.log(rep);
+  .then(report => {
+    console.log(report);
   });
