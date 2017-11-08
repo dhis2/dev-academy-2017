@@ -56,16 +56,12 @@ class App extends Component {
         return (
             <div>
                 <h1>My web portal</h1>
-                <section>
-                    <h2>Pivot table by favorite id</h2>
-                    <div id="table1"></div>
-                    <h2>Pivot table by config</h2>
-                    <div id="table2"></div>
-                </section>
-                <section>
-                    <h2>Chart by favorite id</h2>
-                    <div id="chart1"></div>
-                </section>
+                <h2>Pivot table by favorite id</h2>
+                <div id="table1"></div>
+                <h2>Pivot table by config</h2>
+                <div id="table2"></div>
+                <h2>Chart by favorite id</h2>
+                <div id="chart1"></div>
             </div>
         );
     }
