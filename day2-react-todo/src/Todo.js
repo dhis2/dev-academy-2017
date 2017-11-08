@@ -60,4 +60,7 @@ class Todo extends React.Component {
 	}
 }
 
+// Connect the `mapStateToProps` and `mapDispatchToProps` to our Component so
+// Redux knows how to handle `state` and `props` for us.
+
 export default connect(mapStateToProps, mapDispatchToProps)(Todo);
