@@ -1,7 +1,10 @@
+// Here we capture the Action which we sent and do the correct action.
 const todos = function (state, action) {
 	switch (action.type) {
 		case 'ADD_TODO':
-			console.info('Reducer, ADD_TODO', action.text);
+			console.info('Reducer - Add TODO to Redux state', action.text);
+
+			// This is how we tell redux how to update the state
 			return {
 				todos: [
 					...state.todos,
@@ -10,7 +13,7 @@ const todos = function (state, action) {
 			};
 
 		default: 
-			console.log('boom', state)
+			console.log('Reducer - Use preloaded Redux state', state)
 			return state;
 	}
 }
