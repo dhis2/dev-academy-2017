@@ -13,8 +13,6 @@ const dataElements = rows.map(o => ({
   aggregationType: o.aggregation
 }));
 
-postJson({
-  dataElements
-}).then(report => {
-  console.log(report);
-});
+postJson({ dataElements })
+  .then(report => console.log(report))
+  .catch(err => console.error(err));

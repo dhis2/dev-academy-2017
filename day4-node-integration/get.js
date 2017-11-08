@@ -1,5 +1,5 @@
-const utils = require("./utils");
+const { fetchJson } = require("./utils");
 
-utils.fetchJson({ type: "dataElements" }).then(d => {
-  console.log(d);
-});
+fetchJson({ type: "dataElements" })
+  .then(({ dataElements }) => dataElements.forEach(d => console.log(`${d.id} - ${d.name}`)))
+  .catch(err => console.error(err));
