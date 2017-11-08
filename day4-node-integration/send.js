@@ -1,18 +1,16 @@
-const utils = require("./utils");
+const { postJson } = require("./utils");
 
-utils
-  .postJson({
-    dataElements: [
-      {
-        id: "gpwKG7mSDeS",
-        name: "DE Created From Node",
-        shortName: "DE Node",
-        domainType: "AGGREGATE",
-        aggregationType: "SUM",
-        valueType: "NUMBER"
-      }
-    ]
-  })
-  .then(report => {
-    console.log(report);
-  });
+postJson({
+  dataElements: [
+    {
+      id: "gpwKG7mSDeS",
+      name: "DE Created From Node",
+      shortName: "DE Node",
+      domainType: "AGGREGATE",
+      aggregationType: "SUM",
+      valueType: "NUMBER"
+    }
+  ]
+})
+  .then(report => console.log(report))
+  .catch(err => console.error(err));
