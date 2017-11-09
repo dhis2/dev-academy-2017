@@ -1,8 +1,8 @@
 # Data Wrangler
 
-## Overview
-
 Data wrangler is a tool for collecting and importing metadata and data from CSV data files.
+
+## Overview
 
 * "/bin" contains command files.
 * "/src" contains shared functions.

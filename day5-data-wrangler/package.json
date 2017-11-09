@@ -1,6 +1,6 @@
 {
   "name": "dhis2-data-wrangler",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "DHIS 2 Data wrangler",
   "engines": {
     "node": ">= 6.9.0"
