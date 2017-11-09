@@ -24,12 +24,12 @@ app.run = function() {
 app.importDataValues = function(data) {  
   app.years.forEach(year => {
     let dvs = data
-      .map(rec => {
+      .map(row => {
         return {
-          dataElement: rec['Indicator Code'],
-          orgUnit: rec['Country Code'],
+          dataElement: row['Indicator Code'],
+          orgUnit: row['Country Code'],
           period: year,
-          value: rec[year]
+          value: row[year]
         };
       })
       .filter(d => d.value && d.value != '');
@@ -43,8 +43,9 @@ app.importDataValues = function(data) {
  * Posts the given data value set to the data value set API.
  */
 app.postDataValues = function(dvs) {
-  const payload = {};
-  payload.dataValues = dvs;
+  const payload = {
+    dataValues: dvs
+  };
   
   const options = commons.getOptions().post;
   options.content = JSON.stringify(payload);

@@ -24,9 +24,9 @@ app.run = function() {
  * Imports metadata.
  */
 app.importMetadata = function(data) {
-    const metadata = app.getMetadata(data);
-    console.debug(JSON.stringify(metadata));
-    app.postMetadata(metadata);
+  const metadata = app.getMetadata(data);
+  console.debug(JSON.stringify(metadata));
+  app.postMetadata(metadata);
 }
 
 /**
@@ -55,18 +55,16 @@ app.getMetadata = function(data) {
  */
 app.getDataElements = function(data) {
   let desMap = new Map();
-
-  data.forEach(record => {
-    let code = record['Indicator Code'];
-    let name = record['Indicator Name'];
+  data.forEach(row => {
+    let code = row['Indicator Code'];
+    let name = row['Indicator Name'];
     desMap.set(code, [code,name]);
   });
 
-  let des = Array.from(desMap.keys())
+  return Array.from(desMap.keys())
     .map(key => {
         let code = desMap.get(key)[0];
         let name = desMap.get(key)[1];
-
         return {
           code: code,
           name: name + ' (' + code + ')',
@@ -77,9 +75,6 @@ app.getDataElements = function(data) {
           zeroIsSignificant: false
         };
     });
-
-  console.info('Found data elements: ' + des.length);
-  return des;
 }
 
 /**
@@ -87,18 +82,16 @@ app.getDataElements = function(data) {
  */
 app.getOrgUnits = function(data) {
   let ousMap = new Map();
-
   data.forEach(record => {
     let code = record['Country Code'];
     let name = record['Country Name'];
     ousMap.set(code, [code,name]);
   });
 
-  let ous = Array.from(ousMap.keys())
+  return Array.from(ousMap.keys())
     .map(key => {
         let code = ousMap.get(key)[0];
         let name = ousMap.get(key)[1];
-
         return {
           code: code,
           name: name + ' (' + code + ')',
@@ -107,9 +100,6 @@ app.getOrgUnits = function(data) {
           parent: app.parentOrgUnit
         };
     });
-  
-  console.info('Found org units: ' + ous.length);
-  return ous;
 }
 
 app.run();

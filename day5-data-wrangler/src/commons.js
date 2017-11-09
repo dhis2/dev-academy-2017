@@ -88,16 +88,11 @@ cnf.convertCsvToJson = function(path, doneFn) {
 * Initalizes configuration.
 */
 cnf.initAndGetConf = function() {
-  const dhisHome = process.env.DHIS2_HOME,
-      osHome = process.env[(process.platform == 'win32') ? 'USERPROFILE' : 'HOME'];
+  const dhisHome = process.env.DHIS2_HOME;
 
   if (dhisHome) {
     cnf.configLocation = dhisHome + '/' + cnf.configFilename;
     console.log('Using DHIS2_HOME environment variable pointing to: ' + cnf.configLocation);
-  }
-  else if (osHome) {
-    cnf.configLocation = osHome + '/' + cnf.configFilename;
-    console.log('Using your home directory which seems to be: ' + cnf.configLocation);
   }
   else {
     cnf.configLocation = cnf.configFilename;
