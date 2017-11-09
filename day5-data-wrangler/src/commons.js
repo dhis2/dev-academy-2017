@@ -6,11 +6,10 @@ const csvtojson = require('csvtojson');
 * Main namespace.
 */
 const cnf = {
-  uidPattern: new RegExp('^[a-zA-Z]{1}[a-zA-Z0-9]{10}$'),
   config: undefined,
   configFile: undefined,
   configLocation: undefined,
-  configFilename: 'wbdw.json'
+  configFilename: 'datawrangler.json'
 }
 
 /**
@@ -49,11 +48,6 @@ cnf.getOptions = function() {
       headers: {
         'Content-Type': 'application/json'
       }
-    },
-    delete: {
-      auth: cnf.getAuth(),
-      method: 'delete',
-      timeout: 3600000
     }
   };
 }
