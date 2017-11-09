@@ -24,13 +24,13 @@ app.run = function() {
 app.importDataValues = function(data) {  
   app.years.forEach(year => {
     let dvs = data
-      .map(record => {
-        let dv = {};
-        dv.dataElement = record['Indicator Code'];
-        dv.orgUnit = record['Country Code'];
-        dv.period = year;
-        dv.value = record[dv.period];
-        return dv;
+      .map(rec => {
+        return {
+          dataElement: rec['Indicator Code'],
+          orgUnit: rec['Country Code'],
+          period: year,
+          value: rec[year]
+        };
       })
       .filter(d => d.value && d.value != '');
     

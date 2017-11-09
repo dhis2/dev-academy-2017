@@ -64,15 +64,18 @@ app.getDataElements = function(data) {
 
   let des = Array.from(desMap.keys())
     .map(key => {
-        let de = {};
-        de.code = desMap.get(key)[0];
-        de.name = desMap.get(key)[1] + ' (' + de.code + ')';
-        de.shortName = de.code;
-        de.aggregationType = 'SUM';
-        de.domainType = 'AGGREGATE';
-        de.valueType = 'NUMBER';
-        de.zeroIsSignificant = false;
-        return de;
+        let code = desMap.get(key)[0];
+        let name = desMap.get(key)[1];
+
+        return {
+          code: code,
+          name: name + ' (' + code + ')',
+          shortName: code,
+          aggregationType: 'SUM',
+          domainType: 'AGGREGATE',
+          valueType: 'NUMBER',
+          zeroIsSignificant: false
+        };
     });
 
   console.info('Found data elements: ' + des.length);
@@ -93,13 +96,16 @@ app.getOrgUnits = function(data) {
 
   let ous = Array.from(ousMap.keys())
     .map(key => {
-        let ou = {};
-        ou.code = ousMap.get(key)[0];
-        ou.name = ousMap.get(key)[1] + ' (' + ou.code + ')';
-        ou.shortName = ou.code;
-        ou.openingDate = '1970-01-01';
-        ou.parent = app.parentOrgUnit;
-        return ou;
+        let code = ousMap.get(key)[0];
+        let name = ousMap.get(key)[1];
+
+        return {
+          code: code,
+          name: name + ' (' + code + ')',
+          shortName: code,
+          openingDate: '1970-01-01',
+          parent: app.parentOrgUnit
+        };
     });
   
   console.info('Found org units: ' + ous.length);
