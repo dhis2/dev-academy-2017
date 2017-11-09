@@ -45,7 +45,10 @@ cnf.getOptions = function() {
     post: {
       auth: cnf.getAuth(),
       method: 'post',
-      timeout: 3600000
+      timeout: 3600000,
+      headers: {
+        'Content-Type': 'application/json'
+      }
     },
     delete: {
       auth: cnf.getAuth(),

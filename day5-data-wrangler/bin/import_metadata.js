@@ -34,9 +34,6 @@ app.importMetadata = function(data) {
  */
 app.postMetadata = function(metadata) {
   const options = commons.getOptions().post;
-  options.headers = {
-    'Content-Type': 'application/json'
-  };
   options.content = JSON.stringify(metadata);
 
   const resp = urlsync.request(app.metadataUrl, options);

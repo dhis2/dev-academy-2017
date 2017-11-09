@@ -24,12 +24,12 @@ app.run = function() {
 app.importDataValues = function(data) {  
   app.years.forEach(year => {
     let dvs = data
-      .map(d => {
+      .map(record => {
         let dv = {};
-        dv.dataElement = d['Indicator Code'];
-        dv.orgUnit = d['Country Code'];
+        dv.dataElement = record['Indicator Code'];
+        dv.orgUnit = record['Country Code'];
         dv.period = year;
-        dv.value = d[dv.period];
+        dv.value = record[dv.period];
         return dv;
       })
       .filter(d => d.value && d.value != '');
@@ -47,9 +47,6 @@ app.postDataValues = function(dvs) {
   payload.dataValues = dvs;
   
   const options = commons.getOptions().post;
-  options.headers = {
-    'Content-Type': 'application/json'
-  };
   options.content = JSON.stringify(payload);
 
   const resp = urlsync.request(app.dvsUrl, options);
