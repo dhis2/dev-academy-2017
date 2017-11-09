@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const commons = require('../src/commons.js');
 const urlsync = require('urllib-sync');
+const util = require('util');
 const app = {
   dvsUrl: commons.getConf().baseurl + '/api/dataValueSets?idScheme=code',
   years: ['2004','2005','2006','2007','2008','2009','2010','2011','2012','2013','2014','2015']
@@ -34,7 +35,7 @@ app.importDataValues = function(data) {
       })
       .filter(d => d.value && d.value != '');
     
-    console.info('Found data values: ' + dvs.length + ' for year: ' + year);
+    console.info(util.format('Found %d data values for year %s', dvs.length, year));
     app.postDataValues(dvs);
   });
 }
