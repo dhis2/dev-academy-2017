@@ -63,17 +63,17 @@ app.getDataElements = function(data) {
 
   return Array.from(desMap.keys())
     .map(key => {
-        let code = desMap.get(key)[0];
-        let name = desMap.get(key)[1];
-        return {
-          code: code,
-          name: name + ' (' + code + ')',
-          shortName: code,
-          aggregationType: 'SUM',
-          domainType: 'AGGREGATE',
-          valueType: 'NUMBER',
-          zeroIsSignificant: false
-        };
+      let code = desMap.get(key)[0];
+      let name = desMap.get(key)[1];
+      return {
+        code: code,
+        name: name + ' (' + code + ')',
+        shortName: code,
+        aggregationType: 'SUM',
+        domainType: 'AGGREGATE',
+        valueType: 'NUMBER',
+        zeroIsSignificant: false
+      };
     });
 }
 
@@ -90,15 +90,15 @@ app.getOrgUnits = function(data) {
 
   return Array.from(ousMap.keys())
     .map(key => {
-        let code = ousMap.get(key)[0];
-        let name = ousMap.get(key)[1];
-        return {
-          code: code,
-          name: name + ' (' + code + ')',
-          shortName: code,
-          openingDate: '1970-01-01',
-          parent: app.parentOrgUnit
-        };
+      let code = ousMap.get(key)[0];
+      let name = ousMap.get(key)[1];
+      return {
+        code: code,
+        name: name + ' (' + code + ')',
+        shortName: code,
+        openingDate: '1970-01-01',
+        parent: app.parentOrgUnit
+      };
     });
 }
 
