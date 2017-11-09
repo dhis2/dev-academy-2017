@@ -12,10 +12,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dhis2/.."
+    "url": "git+https://github.com/dhis2/dev-academy-2017"
   },
   "keywords": [
-    "World Bank"
+    "Data import", "DHIS 2"
   ],
   "author": "Lars Helge Overland",
   "license": "BSD-2-Clause",
@@ -25,7 +25,7 @@
     "dw_import_metadata": "bin/import_metadata.js"
   },
   "bugs": {
-    "url": "https://github.com/dhis2/../issues"
+    "url": "https://github.com/dhis2/dev-academy-2017/issues"
   },
-  "homepage": "https://github.com/dhis2/..#readme"
+  "homepage": "https://github.com/dhis2/dev-academy-2017/blob/master/day5-data-wrangler/README.md"
 }
