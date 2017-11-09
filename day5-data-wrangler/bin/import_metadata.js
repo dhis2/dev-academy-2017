@@ -26,10 +26,11 @@ app.run = function() {
  */
 app.importMetadata = function(data) {
   const metadata = app.getMetadata(data);
+  
   console.info(util.format('Found %d data elements and %d org units in metadata', 
     metadata.dataElements.length, metadata.organisationUnits.length));
   console.debug(JSON.stringify(metadata));
-  
+
   app.postMetadata(metadata);
 }
 

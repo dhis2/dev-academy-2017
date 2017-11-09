@@ -14,6 +14,18 @@ Data wrangler is a tool for collecting and importing metadata and data from CSV 
 npm install -g
 ```
 
+## Configuration
+
+Put a file "datawrangler.json" in your DHIS2_HOME directory, i.e. the directory where the DHIS2_HOME env variable points to.
+
+```
+{
+    "baseurl": "http://localhost/dhis",
+    "username": "admin",
+    "password": "Dhis_1234"
+}
+```
+
 ## Usage
 
 ```
