@@ -1,0 +1,31 @@
+{
+  "name": "data-wrangler",
+  "version": "0.1.0",
+  "description": "Data wrangler",
+  "engines": {
+    "node": ">= 6.9.0"
+  },
+  "dependencies": {
+    "csvtojson": "1.1.9",
+    "urllib-sync": "1.1.4",
+    "yargs": "10.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhis2/.."
+  },
+  "keywords": [
+    "World Bank"
+  ],
+  "author": "Lars Helge Overland",
+  "license": "BSD-2-Clause",
+  "preferGlobal": true,
+  "bin": {
+    "dw_import_data": "bin/import_data.js",
+    "dw_import_metadata": "bin/import_metadata.js"
+  },
+  "bugs": {
+    "url": "https://github.com/dhis2/../issues"
+  },
+  "homepage": "https://github.com/dhis2/..#readme"
+}
