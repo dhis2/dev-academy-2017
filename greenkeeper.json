@@ -1,0 +1,14 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "day1-hello-dhis/package.json",
+        "day2-hello-d2/package.json",
+        "day2-react-todo/package.json",
+        "day3-analytics-app/package.json",
+        "day4-node-integration/package.json",
+        "day5-data-wrangler/package.json"
+      ]
+    }
+  }
+}
